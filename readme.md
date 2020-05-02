@@ -7,4 +7,4 @@ Play with 4 types of Path Finding Algorithms.
 - Depth First Search
 
 Check online here => 
-https://imlolman.github.io/Path-Finding-Algorithm/
+https://imlolman.github.io/Path-Finding-Algorithms/
