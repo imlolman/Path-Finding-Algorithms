@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <title>Path Finding Algorithms</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <script src="https://imlolman.github.io/js/controller.js"></script>
+    <link rel="stylesheet" href="assets/css/milligram.min.css">
+    <link href="assets/css/fa/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+    </script>
+</head>
+<body onresize="setup()">
+    <div class="overlay">We Don't Support Portrait Mode, Please Rotate.</div>
+    <div class="overlay1" onclick="launchIntoFullscreen(document.documentElement)">Please Tap to Make it FullScreen.</div>
+    <div class="msgBox"><div class="box"><div class="close" onclick="this.parentElement.parentElement.style.display = `none`"><i class="fas fa-times"></i></div>Path is Not possible</div></div>
+    <main>
+        <nav class="navigation nav-top">
+            <section class="container">
+                <a class="navigation-title" href="/">
+                    <i class="img fas fa-wave-square"></i>
+                    &nbsp;
+                    <h1 class="title">Path Finding Algorithms</h1>
+                </a>
+                <ul class="navigation-list float-right">
+                    <select class="nav-select" name="searchType" id="">
+                        <option value="Astar">A* SEARCH</option>
+                        <option value="gbfs">GREEDY BEST FIRST SEARCH</option>
+                        <option value="bfs">BREADTH FIRST SEARCH</option>
+                        <option value="dfs">DEPTH FIRST SEARCH</option>
+                    </select>
+                    <li class="navigation-item">
+                        <button class="navBtn flex active" id ="showExplored" onclick="toggleShowExplored()"><i class="fas fa-satellite-dish"></i> SHOW EXPLORED</button>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+        <section class="header">
+            <div id="canvasBox">
+
+            </div>
+        </section>
+        <nav class="navigation nav-bottom">
+            <section class="container">
+                <ul class="navigation-list float-left">
+                    <li class="navigation-item">
+                        <button class="navBtn" id="begin" onclick="navBtnFunction('begin')">Begin</button>
+                        <button class="navBtn" id="blank" onclick="navBtnFunction('blank')">Blank</button>
+                        <button class="navBtn active" id="wall" onclick="navBtnFunction('wall')">Wall</button>
+                        <button class="navBtn" id="end" onclick="navBtnFunction('end')">End</button>
+                    </li>
+                </ul>
+                <ul class="navigation-list float-right">
+                    <li class="navigation-item">
+                        <button class="navBtn flex" onclick="grids.resetGrid()"><i class="fas fa-camera-retro"></i> Reset</button>
+                        <button class="navBtn flex" onclick="solveGrid()"><i class="fas fa-dragon"></i> Start</button>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+    </main>
+</body>
+    <script src="assets/js/p5.min.js"></script>
+    <script src="assets/js/grids.js"></script>
+    <script src="assets/js/sketch.js"></script>
+</html>
